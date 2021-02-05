@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="multiplicable-numbers",
-    version="0.0.1",
+    version="0.1.0",
     author="Samuel Sampaio",
     author_email="samukasmk@gmail.com",
     license="Apache 2.0",
@@ -20,5 +20,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    scripts=['scripts/detects-multiplicable-numbers'],
+    scripts=["scripts/detects-multiplicable-numbers"],
+    install_requires=["num2words>=0.5.10"],
 )
