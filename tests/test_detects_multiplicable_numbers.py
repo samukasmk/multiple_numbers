@@ -2,7 +2,7 @@ import unittest
 from multiplicable_numbers import detects_multiplicable_numbers
 
 
-class TestDisplaysLiteralNumbers(unittest.TestCase):
+class TestDetectsMultiplicableNumbers(unittest.TestCase):
 
     def setUp(self):
         self.multiplicables_by_three = {i * 3 for i in range(1, 34)}
