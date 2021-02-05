@@ -1,5 +1,5 @@
 import argparse
-from multiple_numbers import detects_multiplicable_numbers
+from multiplicable_numbers import detects_multiplicable_numbers
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A command line tools that tells if is multiple numbers.')
