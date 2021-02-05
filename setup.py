@@ -1,13 +1,11 @@
 import setuptools
 
-import multiple_numbers
-
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="multiple-numbers-samukasmk",
-    version=multiple_numbers.__version__,
+    version="0.0.1",
     author="Samuel Sampaio",
     author_email="samukasmk@gmail.com",
     license="Apache 2.0",
