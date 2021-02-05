@@ -34,3 +34,24 @@ def detects_multiplicable_numbers(number, multiplicables_list):
         display = str(number)
 
     return display
+
+
+def displays_detected_numbers(initial_number, final_number, multiplicables):
+    """The displays_detected_numbers function iterates the numbers to lines
+
+       Args:
+           initial_number (int): The initial number to start the iteration.
+           final_number (int): The final number to start the iteration.
+           multiplicable (int): The multiplicable numbers list to check.
+
+       Returns:
+           list: The list of strings with literal number if number is multiplicable, The int number if is not.
+    """
+
+    lines_to_display = []
+
+    for number in range(initial_number, final_number + 1):
+        verified_number = detects_multiplicable_numbers(number, multiplicables)
+        lines_to_display.append(verified_number)
+
+    return lines_to_display

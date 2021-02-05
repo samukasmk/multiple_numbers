@@ -1,14 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-from multiplicable_numbers import detects_multiplicable_numbers
-
-
-def displays_detected_numbers(initial_number, final_number, multiplicables):
-    for number in range(initial_number, final_number + 1):
-        verified_number = detects_multiplicable_numbers(number, multiplicables)
-        print(verified_number)
-
+from multiplicable_numbers import displays_detected_numbers
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A command line tools that tells if is multiple numbers.')
@@ -20,4 +13,11 @@ if __name__ == '__main__':
                         help='The final number to start the iteration')
     args = parser.parse_args()
 
-    displays_detected_numbers(args.initial_number, args.final_number, args.multiplicables)
+    # executes the detections and build a list of lines
+    lines_to_display = displays_detected_numbers(args.initial_number, args.final_number, args.multiplicables)
+
+    # converts list to string output
+    output_string = '\n'.join(lines_to_display)
+
+    # show on user screen
+    print(output_string)
