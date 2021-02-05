@@ -1,3 +1,6 @@
+from num2words import num2words
+
+
 def is_multiplicable(number, multiplicable):
     """The is_multiplicable function tells if a number is multiplicable by another
 
@@ -25,12 +28,13 @@ def displays_literal_numbers(number, multiplicables_list):
 
     for multiplicable in multiplicables_list:
         if is_multiplicable(number, multiplicable):
-            display += 'Number'
+            display += num2words(number).capitalize()
 
     if not display:
         display = str(number)
 
     return display
+
 
 def detects_multiplicable_numbers(initial_number, final_number, multiplicables):
     for number in range(initial_number, final_number + 1):
