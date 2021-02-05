@@ -20,5 +20,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    scripts=['scripts/detects-multiplicable-numbers'],
+    scripts=["scripts/detects-multiplicable-numbers"],
+    install_requires=["num2words>=0.5.10"],
 )
