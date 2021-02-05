@@ -1,5 +1,5 @@
 import unittest
-from multiplicable_numbers import display_detections
+from multiplicable_numbers import displays_literal_numbers
 
 
 class TestDisplayDetections(unittest.TestCase):
@@ -14,21 +14,21 @@ class TestDisplayDetections(unittest.TestCase):
         self.non_multiplicables_by_five = self.all_from_one_to_a_hundred - self.multiplicables_just_by_five
 
     def test_multiplicables_just_by_three(self):
-        results = [display_detections(m, [3]) == 'Three' for m in self.multiplicables_just_by_three]
+        results = [displays_literal_numbers(m, [3]) == 'Three' for m in self.multiplicables_just_by_three]
         self.assertEqual(all(results), True)
 
     def test_multiplicables_just_by_five(self):
-        results = [display_detections(m, [5]) == 'Five' for m in self.multiplicables_just_by_five]
+        results = [displays_literal_numbers(m, [5]) == 'Five' for m in self.multiplicables_just_by_five]
         self.assertEqual(all(results), True)
 
     def test_multiplicables_by_three_and_five(self):
-        results = [display_detections(m, [5]) == 'ThreeFive' for m in self.multiplicables_by_three_and_five]
+        results = [displays_literal_numbers(m, [5]) == 'ThreeFive' for m in self.multiplicables_by_three_and_five]
         self.assertEqual(all(results), True)
 
     def test_non_multiplicables_by_three(self):
-        results = [display_detections(m, 3) == str(m) for m in self.non_multiplicables_by_three]
+        results = [displays_literal_numbers(m, 3) == str(m) for m in self.non_multiplicables_by_three]
         self.assertEqual(all(results), True)
 
     def test_non_multiplicables_by_five(self):
-        results = [display_detections(m, 5) == str(m) for m in self.non_multiplicables_by_five]
+        results = [displays_literal_numbers(m, 5) == str(m) for m in self.non_multiplicables_by_five]
         self.assertEqual(all(results), True)
