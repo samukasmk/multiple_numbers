@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="multiplicable-numbers",
-    version="0.1.0",
+    version="0.1.1",
     author="Samuel Sampaio",
     author_email="samukasmk@gmail.com",
     license="Apache 2.0",
