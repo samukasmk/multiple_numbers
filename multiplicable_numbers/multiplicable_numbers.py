@@ -28,7 +28,7 @@ def displays_literal_numbers(number, multiplicables_list):
 
     for multiplicable in multiplicables_list:
         if is_multiplicable(number, multiplicable):
-            display += num2words(number).capitalize()
+            display += num2words(multiplicable).capitalize()
 
     if not display:
         display = str(number)

@@ -25,12 +25,8 @@ class TestDisplaysLiteralNumbers(unittest.TestCase):
         results = [displays_literal_numbers(m, [5]) == 'Five' for m in self.multiplicables_just_by_five]
         self.assertEqual(all(results), True)
 
-    def test_multiplicables_just_by_three_and_five(self):
-        results = [displays_literal_numbers(m, [3, 5]) == 'ThreeFive' for m in self.multiplicables_just_by_five]
-        self.assertEqual(all(results), True)
-
     def test_multiplicables_by_three_and_five(self):
-        results = [displays_literal_numbers(m, [5]) == 'ThreeFive' for m in self.multiplicables_by_three_and_five]
+        results = [displays_literal_numbers(m, [3, 5]) == 'ThreeFive' for m in self.multiplicables_by_three_and_five]
         self.assertEqual(all(results), True)
 
     def test_non_multiplicables_by_five(self):
