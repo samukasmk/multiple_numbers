@@ -26,7 +26,3 @@ class TestMultiplicableValidations(unittest.TestCase):
     def test_non_multiplicables_by_five(self):
         results = [is_multiplicable(m, 5) is False for m in self.non_multiplicables_by_five]
         self.assertEqual(all(results), True)
-
-
-if __name__ == '__main__':
-    unittest.main()
