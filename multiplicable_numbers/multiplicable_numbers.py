@@ -14,8 +14,8 @@ def is_multiplicable(number, multiplicable):
     return number % multiplicable == 0
 
 
-def displays_literal_numbers(number, multiplicables_list):
-    """The displays_literal_numbers function checks if number multiplicable and returns a literal number if is true
+def detects_multiplicable_numbers(number, multiplicables_list):
+    """The detects_multiplicable_numbers function checks if number multiplicable and returns a literal number if is true
 
        Args:
            number (int): The number to compare.
@@ -34,8 +34,3 @@ def displays_literal_numbers(number, multiplicables_list):
         display = str(number)
 
     return display
-
-
-def detects_multiplicable_numbers(initial_number, final_number, multiplicables):
-    for number in range(initial_number, final_number + 1):
-        print(number)

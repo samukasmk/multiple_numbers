@@ -3,6 +3,13 @@
 import argparse
 from multiplicable_numbers import detects_multiplicable_numbers
 
+
+def displays_detected_numbers(initial_number, final_number, multiplicables):
+    for number in range(initial_number, final_number + 1):
+        verified_number = detects_multiplicable_numbers(number, multiplicables)
+        print(verified_number)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A command line tools that tells if is multiple numbers.')
     parser.add_argument('-m', '--multiplicables', type=int, nargs='*', default=[3, 5],
@@ -13,4 +20,4 @@ if __name__ == '__main__':
                         help='The final number to start the iteration')
     args = parser.parse_args()
 
-    detects_multiplicable_numbers(args.initial_number, args.final_number, args.multiplicables)
+    displays_detected_numbers(args.initial_number, args.final_number, args.multiplicables)
