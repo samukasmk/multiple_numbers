@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  multiple-numbers:
+    image: multiple-numbers:latest
+    build:
+      context: .
+    entrypoint: ["multiple-numbers"]
+    networks:
+      - multiple_numbers
+
+  tests:
+    image: multiple-numbers:latest
+    build:
+      context: .
+    entrypoint: ["python", "-m", "unittest", "discover", "tests", "--verbose"]
+    networks:
+      - multiple_numbers
+
+networks:
+  multiple_numbers:
+    driver: bridge

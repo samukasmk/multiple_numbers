@@ -63,14 +63,14 @@ def main():
     parser = argparse.ArgumentParser(description='A command line tools that tells if is multiple numbers.')
     parser.add_argument('-m', '--multiplicables', type=int, nargs='*', default=[3, 5],
                         help='The multiplicable numbers to do the detections.')
-    parser.add_argument('-i', '--initial-number', type=int, default=1,
+    parser.add_argument('-i', '--first-number', type=int, default=1,
                         help='The initial number to start the iteration')
-    parser.add_argument('-f', '--final-number', type=int, default=100,
+    parser.add_argument('-f', '--last-number', type=int, default=100,
                         help='The final number to start the iteration')
     args = parser.parse_args()
 
     # executes the detections and build a list of lines
-    lines_to_display = displays_detected_numbers(args.initial_number, args.final_number, args.multiplicables)
+    lines_to_display = displays_detected_numbers(args.first_number, args.last_number, args.multiplicables)
 
     # converts list to string output
     output_string = '\n'.join(lines_to_display)
