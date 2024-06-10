@@ -1,5 +1,5 @@
 import unittest
-from multiplicable_numbers import detects_multiplicable_numbers
+from multiple_numbers import detects_multiplicable_numbers
 
 
 class TestDetectsMultiplicableNumbers(unittest.TestCase):
