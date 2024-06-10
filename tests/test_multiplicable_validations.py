@@ -1,5 +1,5 @@
 import unittest
-from multiplicable_numbers import is_multiplicable
+from multiple_numbers import is_multiplicable
 
 
 class TestMultiplicableValidations(unittest.TestCase):

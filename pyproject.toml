@@ -1,6 +1,19 @@
+[tool.poetry]
+name = "multiple-numbers"
+version = "0.1.2"
+description = "It's a sample project that detects multiplicable numbers of your choice and converts int numbers into literal words."
+authors = ["Samuel Sampaio <samukasmk@gmail.com>"]
+license = "Apache2"
+readme = "README.md"
+packages = [{include = "multiple_numbers"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+num2words = "^0.5.13"
+
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+multiple-numbers = "multiple_numbers:multiple_numbers.main"

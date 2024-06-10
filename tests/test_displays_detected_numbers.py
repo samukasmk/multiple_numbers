@@ -1,5 +1,5 @@
 import unittest
-from multiplicable_numbers import displays_detected_numbers
+from multiple_numbers import displays_detected_numbers
 
 
 class TestDisplaysDetectedNumbers(unittest.TestCase):

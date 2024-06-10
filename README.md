@@ -1,19 +1,48 @@
 multiplicable_numbers
 ---
 
-This is a sample project that tries to detects multiplicable numbers and for true cases converts int numbers in literal words.
+Welcome [Fáilte] to `multiple_numbers` project. It's just simple example of how to detect multiple numbers of your choice and converts int numbers into literal words.
 
-## Instaling and executing
+By: Samuel Maciel Sampaio
+Email: [samuel.maciel.sampaio@gmail.com](mailto:samuel.maciel.sampaio@gmail.com)
+Github: @samukasmk
+
+# Installing
+
+## External tools
+
+This project requires of some external tools to be installed like `git`, `docker`, and `docker-compose`.
+
+If you don't have external tools installed like mentioned before. You should to consider read this documents:
+- [How to install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [How to install Docker Engine](https://docs.docker.com/engine/install/)
+- [How to install Docker-Compose](https://docs.docker.com/compose/install/)
+
+
+## Cloning this project
+
 ```
-$ pip install -e git://github.com/samukasmk/multiplicable_numbers.git@v0.1.1#egg=multiplicable_numbers.egg-info
+git clone https://github.com/samukasmk/multiple_numbers.git
 ```
 
-## Executing on command line
-After the pip install the setup will create a command on your terminal called `detects-multiplicable-numbers`
-Just executes the commands below on your command line terminal with the default parameters
-that the program will start detecting multiples of 3 and 5, within a number from 1 to 100
+## Building docker image
+
+```sh
+docker-compose build multiple-numbers
 ```
-$ detects-multiplicable-numbers
+
+# Running
+
+## Running by docker-compose
+After git project was cloned and the `docker` image was builded successfuly, to run the python script by docker-compose is just the simple command bellow:
+
+```sh
+docker-compose run multiple-numbers
+Creating multiple_numbers_multiple-numbers_run ... done
+```
+
+The script by default will start detecting multiples of 3 and 5, within a number from 1 to 100:
+```sh
 1
 2
 Three
@@ -116,75 +145,77 @@ Three
 Five
 ```
 
-The command is modular you can change the multiplicablea and the range numbers of comparison
+## Displaying other options
+But you can choose other options to display with `--help` argument:
 
+
+```sh
+$ docker-compose run multiple-numbers --help
+Creating multiple_numbers_multiple-numbers_run ... done
 ```
-$ detects-multiplicable-numbers --help
-usage: detects-multiplicable-numbers [-h] [-m [MULTIPLICABLES ...]] [-i INITIAL_NUMBER] [-f FINAL_NUMBER]
+
+```sh
+usage: multiple-numbers [-h] [-m [MULTIPLICABLES ...]] [-i INITIAL_NUMBER] [-f FINAL_NUMBER]
 
 A command line tools that tells if is multiple numbers.
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -m [MULTIPLICABLES ...], --multiplicables [MULTIPLICABLES ...]
                         The multiplicable numbers to do the detections.
-  -i INITIAL_NUMBER, --initial-number INITIAL_NUMBER
+  -i FIRST_NUMBER, --first-number FIRST_NUMBER
                         The initial number to start the iteration
-  -f FINAL_NUMBER, --final-number FINAL_NUMBER
+  -f LAST_NUMBER, --last-number LAST_NUMBER
                         The final number to start the iteration
 ```
 
-This is another example of runs but detecting multiples of three, six and nine on range of 50 numbers
+## Running with different arguments
+
+```sh
+$ docker-compose run multiple-numbers --first-number 1 --last-number 10 --multiplicables 2 4 6
+Creating multiple_numbers_multiple-numbers_run ... done
 ```
-$ detects-multiplicable-numbers -i 1 -f 50 -m 3 6 9 
+
+```sh
 1
-2
-Three
-4
+Two
+3
+TwoFour
 5
-ThreeSix
+TwoSix
 7
-8
-ThreeNine
-10
-11
-ThreeSix
-13
-14
-Three
-16
-17
-ThreeSixNine
-19
-20
-Three
-22
-23
-ThreeSix
-25
-26
-ThreeNine
-28
-29
-ThreeSix
-31
-32
-Three
-34
-35
-ThreeSixNine
-37
-38
-Three
-40
-41
-ThreeSix
-43
-44
-ThreeNine
-46
-47
-ThreeSix
-49
-50
+TwoFour
+9
+Two
+```
+
+
+# Testing
+
+To execute unit tests previous defined by docker-compose is just the simple command bellow:
+
+```sh
+docker-compose run tests
+```
+
+```sh
+Creating multiple_numbers_tests_run ... done
+test_multiplicables_by_three_and_five (test_detects_multiplicable_numbers.TestDetectsMultiplicableNumbers.test_multiplicables_by_three_and_five) ... ok
+test_multiplicables_just_by_five (test_detects_multiplicable_numbers.TestDetectsMultiplicableNumbers.test_multiplicables_just_by_five) ... ok
+test_multiplicables_just_by_three (test_detects_multiplicable_numbers.TestDetectsMultiplicableNumbers.test_multiplicables_just_by_three) ... ok
+test_non_multiplicables_by_five (test_detects_multiplicable_numbers.TestDetectsMultiplicableNumbers.test_non_multiplicables_by_five) ... ok
+test_non_multiplicables_by_three (test_detects_multiplicable_numbers.TestDetectsMultiplicableNumbers.test_non_multiplicables_by_three) ... ok
+test_non_multiplicables_by_three_five (test_detects_multiplicable_numbers.TestDetectsMultiplicableNumbers.test_non_multiplicables_by_three_five) ... ok
+test_one_to_a_hundred_with_six_and_nine_multiplicables (test_displays_detected_numbers.TestDisplaysDetectedNumbers.test_one_to_a_hundred_with_six_and_nine_multiplicables) ... ok
+test_one_to_a_hundred_with_three_and_five_multiplicables (test_displays_detected_numbers.TestDisplaysDetectedNumbers.test_one_to_a_hundred_with_three_and_five_multiplicables) ... ok
+test_one_to_a_hundred_with_tow_and_four_multiplicables (test_displays_detected_numbers.TestDisplaysDetectedNumbers.test_one_to_a_hundred_with_tow_and_four_multiplicables) ... ok
+test_multiplicables_by_five (test_multiplicable_validations.TestMultiplicableValidations.test_multiplicables_by_five) ... ok
+test_multiplicables_by_three (test_multiplicable_validations.TestMultiplicableValidations.test_multiplicables_by_three) ... ok
+test_non_multiplicables_by_five (test_multiplicable_validations.TestMultiplicableValidations.test_non_multiplicables_by_five) ... ok
+test_non_multiplicables_by_three (test_multiplicable_validations.TestMultiplicableValidations.test_non_multiplicables_by_three) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.003s
+
+OK
 ```
