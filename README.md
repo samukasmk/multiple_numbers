@@ -1,19 +1,19 @@
 multiplicable_numbers
 ---
 
-Welcome [Fáilte] to `multiple_numbers` project. It's just simple example of how to detect multiple numbers of your choice and converts int numbers into literal words.
+Welcome [Fáilte] to `multiple_numbers` project. It's just a simple example of how to detect multiple numbers of your choice and convert int numbers into literal words.
 
-By: Samuel Maciel Sampaio
-Email: [samuel.maciel.sampaio@gmail.com](mailto:samuel.maciel.sampaio@gmail.com)
-Github: @samukasmk
+- By: Samuel Maciel Sampaio
+- Email: [samuel.maciel.sampaio@gmail.com](mailto:samuel.maciel.sampaio@gmail.com)
+- Github: @samukasmk
 
 # Installing
 
 ## External tools
 
-This project requires of some external tools to be installed like `git`, `docker`, and `docker-compose`.
+This project requires some external tools like: `git`, `docker`, and `docker-compose`.
 
-If you don't have external tools installed like mentioned before. You should to consider read this documents:
+If you don't have some of those external tools mentioned. You should read these articles:
 - [How to install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [How to install Docker Engine](https://docs.docker.com/engine/install/)
 - [How to install Docker-Compose](https://docs.docker.com/compose/install/)
@@ -34,7 +34,7 @@ docker-compose build multiple-numbers
 # Running
 
 ## Running by docker-compose
-After git project was cloned and the `docker` image was builded successfuly, to run the python script by docker-compose is just the simple command bellow:
+After `git` project was cloned and the `docker` image was built successfully, to run the python script by docker-compose is just the simple command below:
 
 ```sh
 docker-compose run multiple-numbers
@@ -146,7 +146,7 @@ Five
 ```
 
 ## Displaying other options
-But you can choose other options to display with `--help` argument:
+But you can display other argument options with `--help` to run with other parameters:
 
 
 ```sh
@@ -192,7 +192,7 @@ Two
 
 # Testing
 
-To execute unit tests previous defined by docker-compose is just the simple command bellow:
+To run unit tests by docker-compose previous defined, just execute the simple command:
 
 ```sh
 docker-compose run tests
