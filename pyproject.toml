@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "multiple-numbers"
-version = "0.1.2"
+version = "0.1.4"
 description = "It's a sample project that detects multiplicable numbers of your choice and converts int numbers into literal words."
 authors = ["Samuel Sampaio <samukasmk@gmail.com>"]
 license = "Apache2"
